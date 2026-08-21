@@ -38,7 +38,10 @@ const tooltipStyle = {
 
 function ForecastPage() {
   const { result } = useEnergyGuard();
-  const peak = result.forecast.reduce((a, b) => (b.gap > a.gap ? b : a), result.forecast[0]);
+  const peak = result.forecast.reduce<(typeof result.forecast)[number] | undefined>(
+    (a, b) => (!a || b.gap > a.gap ? b : a),
+    undefined,
+  );
 
   return (
     <AppShell title="Supply Gap Forecast" subtitle="90-day demand, supply and price trajectory under active scenario">
