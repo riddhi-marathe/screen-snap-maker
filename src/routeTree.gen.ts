@@ -10,11 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlertsRouteImport } from './routes/alerts'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ForecastRouteImport } from './routes/forecast'
+import { Route as LiveRouteImport } from './routes/live'
+import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as RiskRouteImport } from './routes/risk'
+import { Route as ScenariosRouteImport } from './routes/scenarios'
+import { Route as SprRouteImport } from './routes/spr'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -22,31 +34,117 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForecastRoute = ForecastRouteImport.update({
+  id: '/forecast',
+  path: '/forecast',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveRoute = LiveRouteImport.update({
+  id: '/live',
+  path: '/live',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannerRoute = PlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiskRoute = RiskRouteImport.update({
+  id: '/risk',
+  path: '/risk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScenariosRoute = ScenariosRouteImport.update({
+  id: '/scenarios',
+  path: '/scenarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SprRoute = SprRouteImport.update({
+  id: '/spr',
+  path: '/spr',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
   '/dashboard': typeof DashboardRoute
+  '/forecast': typeof ForecastRoute
+  '/live': typeof LiveRoute
+  '/planner': typeof PlannerRoute
+  '/risk': typeof RiskRoute
+  '/scenarios': typeof ScenariosRoute
+  '/spr': typeof SprRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
   '/dashboard': typeof DashboardRoute
+  '/forecast': typeof ForecastRoute
+  '/live': typeof LiveRoute
+  '/planner': typeof PlannerRoute
+  '/risk': typeof RiskRoute
+  '/scenarios': typeof ScenariosRoute
+  '/spr': typeof SprRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
   '/dashboard': typeof DashboardRoute
+  '/forecast': typeof ForecastRoute
+  '/live': typeof LiveRoute
+  '/planner': typeof PlannerRoute
+  '/risk': typeof RiskRoute
+  '/scenarios': typeof ScenariosRoute
+  '/spr': typeof SprRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard'
+  fullPaths:
+    | '/'
+    | '/alerts'
+    | '/dashboard'
+    | '/forecast'
+    | '/live'
+    | '/planner'
+    | '/risk'
+    | '/scenarios'
+    | '/spr'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard'
-  id: '__root__' | '/' | '/dashboard'
+  to:
+    | '/'
+    | '/alerts'
+    | '/dashboard'
+    | '/forecast'
+    | '/live'
+    | '/planner'
+    | '/risk'
+    | '/scenarios'
+    | '/spr'
+  id:
+    | '__root__'
+    | '/'
+    | '/alerts'
+    | '/dashboard'
+    | '/forecast'
+    | '/live'
+    | '/planner'
+    | '/risk'
+    | '/scenarios'
+    | '/spr'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlertsRoute: typeof AlertsRoute
   DashboardRoute: typeof DashboardRoute
+  ForecastRoute: typeof ForecastRoute
+  LiveRoute: typeof LiveRoute
+  PlannerRoute: typeof PlannerRoute
+  RiskRoute: typeof RiskRoute
+  ScenariosRoute: typeof ScenariosRoute
+  SprRoute: typeof SprRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +156,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -65,12 +170,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/forecast': {
+      id: '/forecast'
+      path: '/forecast'
+      fullPath: '/forecast'
+      preLoaderRoute: typeof ForecastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live': {
+      id: '/live'
+      path: '/live'
+      fullPath: '/live'
+      preLoaderRoute: typeof LiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planner': {
+      id: '/planner'
+      path: '/planner'
+      fullPath: '/planner'
+      preLoaderRoute: typeof PlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/risk': {
+      id: '/risk'
+      path: '/risk'
+      fullPath: '/risk'
+      preLoaderRoute: typeof RiskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scenarios': {
+      id: '/scenarios'
+      path: '/scenarios'
+      fullPath: '/scenarios'
+      preLoaderRoute: typeof ScenariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spr': {
+      id: '/spr'
+      path: '/spr'
+      fullPath: '/spr'
+      preLoaderRoute: typeof SprRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlertsRoute: AlertsRoute,
   DashboardRoute: DashboardRoute,
+  ForecastRoute: ForecastRoute,
+  LiveRoute: LiveRoute,
+  PlannerRoute: PlannerRoute,
+  RiskRoute: RiskRoute,
+  ScenariosRoute: ScenariosRoute,
+  SprRoute: SprRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
