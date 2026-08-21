@@ -405,10 +405,10 @@ const VESSEL_NAMES = [
 ];
 
 export const VESSELS: Vessel[] = VESSEL_NAMES.map((name, i) => {
-  const routeIdx = i % ROUTES.length;
-  const route = ROUTES[routeIdx];
+  const route = ROUTES[i % ROUTES.length]!;
   const supplierPool = SUPPLIERS.filter((s) => s.corridor === route.corridorId);
-  const supplier = supplierPool[i % supplierPool.length] ?? SUPPLIERS[0];
+  const supplier = supplierPool[i % Math.max(1, supplierPool.length)] ?? SUPPLIERS[0]!;
+  const port = PORTS[i % PORTS.length]!;
   return {
     id: `v-${i + 1}`,
     name,
@@ -416,7 +416,7 @@ export const VESSELS: Vessel[] = VESSEL_NAMES.map((name, i) => {
     class: i % 3 === 0 ? "VLCC" : i % 3 === 1 ? "Suezmax" : "Aframax",
     cargoKbbl: i % 3 === 0 ? 2000 : i % 3 === 1 ? 1000 : 750,
     supplierId: supplier.id,
-    destPortId: PORTS[i % PORTS.length].id,
+    destPortId: port.id,
     routeId: route.id,
     progress: ((i * 137) % 100) / 100,
     speed: 11.2 + ((i * 7) % 5) * 0.6,
