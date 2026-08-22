@@ -1,26 +1,41 @@
-# Pixel Perfect UI
+# EnergyGuard AI — Energy Security Control Tower
+An AI-driven sovereign supply chain resilience and digital twin platform for import-dependent energy economies.
 
-Implement exactly the screenshot and nothing else
+## 🚀 Live Demo
+- **Web App:** https://screen-snap-maker.lovable.app
 
-This project was built with [Lovable](https://lovable.dev).
+---
 
-**Live app**: https://screen-snap-maker.lovable.app
+## 📌 Problem Statement
+India imports ~88% of its crude oil, with major volumes passing through geopolitical maritime chokepoints (Strait of Hormuz, Red Sea). EnergyGuard AI models real-time chokepoint risks, simulates compound disruption scenarios, and computes optimal procurement rerouting and Strategic Petroleum Reserve (SPR) drawdown strategies.
 
-## Build with Lovable
+---
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c4ad8e84-67ce-440f-a18c-1f2a85dff182).
+## ⚡ Key Features
+- **Digital Twin Maritime Flow:** Live tracking of crude tonnage, active vessels, and chokepoint threat heatmaps.
+- **Risk Intelligence Engine:** Dynamic political and logistics threat scoring across maritime corridors and key crude suppliers.
+- **Scenario Simulation Lab:** Parametric stress testing for Hormuz closures, Red Sea threats, and sudden supplier embargoes.
+- **Strategic Petroleum Reserve (SPR) Optimizer:** Automated site-level drawdown modeling (Mangaluru, Padur, Vizag, Chandikhol) to prevent refinery starvation.
+- **AI Crisis Planner:** Actionable procurement playbooks, crude substitution matching, and macroeconomic cost impact analysis.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+---
 
-## Development
+## 🛠️ Tech Stack
+- **Frontend:** React, TypeScript, Tailwind CSS, Lucide Icons
+- **Visualization:** Recharts, Interactive Maritime Maps
+- **State Management & Simulation:** In-app deterministic simulation engine
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+---
 
-```sh
-git clone <this-repository-url>
+## 💻 Local Development Setup
+
+```bash
+# Clone the repository
+git clone <repository-url>
 cd <repository-name>
-npm i
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-```
